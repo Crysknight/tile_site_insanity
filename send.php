@@ -4,8 +4,8 @@ $json = file_get_contents('php://input');
 $json = json_decode($json);
 
 $to = "pavel@pln-b.ru";
-$subject = "Отправка формы без заказа с сайта tile.site";
-$headers = "From: tile.site@tile.site \n";
+$subject = "Отправка формы без заказа с сайта trotuar-market.ru";
+$headers = "From: order@trotuar-market.ru \n";
 $headers .= "MIME-Version: 1.0\n";
 $headers .= "Content-type: text/html; charset=iso-8859-1\n";
 
@@ -17,7 +17,7 @@ if (isset($json->infos->comment)) {
 	$message .= "<b>Комментарий: </b>" . $comment ."<hr />";
 }
 if (isset($json->wares[0])) {
-	$subject = "Заказ товаров с сайта tile.site";
+	$subject = "Заказ товаров с сайта trotuar-market.ru";
 	$sum = 0;
 	foreach ($json->wares as $key => $value) {
 		$message .= "Товар " . ($key + 1) . ":<br />" .
