@@ -439,6 +439,7 @@ $(document).ready(function(){
 		var confirmation = $('#send_tile .order-wrapper .row');
 		var nameInput = form.find('#send_form .name');
 		var numberInput = form.find('#send_form .number');
+		var commentInput = form.find('#send_form .comment textarea');
 		var confirmationError = form.find('.confirmation-error');
 		if (nameInput.val() == '' || numberInput.val() == '') {
 			confirmationError.slideDown(300, function(){
@@ -470,6 +471,9 @@ $(document).ready(function(){
 		confirmation.parent('.order-wrapper').toggleClass('active');
 		postObject.infos.name = nameInput.val();
 		postObject.infos.phone = numberInput.val();
+		if (commentInput.val()) {
+			postObject.infos.comment = commentInput.val();	
+		}
 		send();
 		$(this).unbind('click');
 		$(this).click(function(e){
@@ -888,7 +892,17 @@ $(window).on('load resize', function() {
 	if ($(window).width() <= 508) {
 		$('.product .unique-header').css({'margin-top': Math.round(height / 5.5)});
 	}
+
+	$('div.comment').width(
+		$('input.name').outerWidth(true) +
+		$('input.number').outerWidth(true) +
+		$('input.submit').outerWidth() + 8
+	);
 });
+
+//---------------------------------------
+/* Обработчики */
+//---------------------------------------
 
 $(window).scroll(function(){
 	if($('body').scrollLeft() > 0) {
@@ -910,6 +924,7 @@ $('.more-about').click(function() {
 	}
 	$(this).prev('.description').toggleClass('unfolded');
 });
+
 
 //---------------------------------------
 /* Инициализация гугл карт */
