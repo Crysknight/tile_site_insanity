@@ -972,7 +972,6 @@ span.rouble {
 		height: 430px;
 	}
 	#tile_product .product p:first-of-type {
-		height: 150px;
 	}
 	#tile_product .size-input {
 		font-size: 12px;
@@ -1033,7 +1032,6 @@ span.rouble {
 		margin-top: 0;
 	}
 	#tile_product .product p:first-of-type {
-		height: 70px;
 	}
 	#tile_product .product {
 		margin-top: 150px;
@@ -1104,6 +1102,10 @@ span.rouble {
 		height: 625px;
 		padding: 0 30px;
 	}
+	#send_tile .comment {
+		width: 90%;
+		margin: 15px 0 0 0;
+	}
 }
 
 @media (max-width: 620px) {
@@ -1126,7 +1128,6 @@ span.rouble {
 		height: 160px;
 	}
 	#tile_product .product p:first-of-type {
-		height: 130px;
 	}
 	#contacts-map .contacts.slided {
 		left: -85%;
@@ -1168,7 +1169,6 @@ span.rouble {
 		margin-left: 2%;
 	}
 	#tile_product .product p:first-of-type {
-		height: 140px;
 		font-size: 13px;
 	}
 	#contacts-map .contacts {

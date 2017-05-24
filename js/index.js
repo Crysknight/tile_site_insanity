@@ -770,12 +770,83 @@ $(document).ready(function(){
 
   var colors_4 = [
   	{
-  		name: 'Графит',
-  		palette: 'rbg(55, 55, 55)',
+			name: 'Арктика',
+			palette: 'rgb(100, 141, 159)',
+			image: 'images/arktika.png',
+			price: 200
+		},
+  	{
+  		name: 'Зеленый мох',
+			palette: 'rgb(58, 78, 79)',
+			image: 'images/mokh.png',
+			price: 140
+		},
+  	{
+			name: 'Изумруд',
+			palette: 'rgb(132, 180, 157)',
+			image: 'images/izumrud.png',
+			price: 210
+		},
+  	{
+			name: 'Вишня',
+			palette: 'rgb(150, 100, 100)',
+			image: 'images/vishnya.png',
+			price: 190
+		},
+  	{
+			name: 'Лимон',
+			palette: 'rgb(215, 168, 73)',
+			image: 'images/limon.png',
+			price: 190
+		},
+  	{
+			name: 'Апельсин',
+			palette: 'rgb(211, 132, 70)',
+			image: 'images/apelsin.png',
+			price: 190
+		},
+  	{
+			name: 'Гавана',
+			palette: 'rgb(116, 102, 92)',
+			image: 'images/gavana.png',
+			price: 110
+		},
+  	{
+			name: 'Каштан',
+			palette: 'rgb(143, 119, 108)',
+			image: 'images/kashtan.png',
+			price: 100
+		},
+  	{
+			name: 'Горчица',
+			palette: 'rgb(213, 178, 105)',
+			image: 'images/gorchitsa.png',
+			price: 120
+		},
+  	{
+			name: 'Сурик',
+			palette: 'rgb(151, 84, 67)',
+			image: 'images/surik.png',
+			price: 80
+		},
+  	{
+			name: 'Жемчужина',
+			palette: 'rgb(99, 99, 99)',
+			image: 'images/zhemchuzhina.png',
+			price: 180
+		},
+  	{
+			name: 'Графит',
+  		palette: 'rgb(55, 55, 55)',
   		image: 'images/grafit.png',
   		price: 60
   	}
   ];
+
+  colors_4 = colors_4.sort(function(a, b) {
+  	if (a.price > b.price) return 1;
+  	if (a.price < b.price) return -1;
+  });
 
 	var tile_1_ColorInput = new ColorOptions(
 		colors_1, 
@@ -893,11 +964,13 @@ $(window).on('load resize', function() {
 		$('.product .unique-header').css({'margin-top': Math.round(height / 5.5)});
 	}
 
-	$('div.comment').width(
-		$('input.name').outerWidth(true) +
-		$('input.number').outerWidth(true) +
-		$('input.submit').outerWidth() + 8
-	);
+	if ($(window).width() > 767) {
+		$('div.comment').width(
+			$('input.name').outerWidth(true) +
+			$('input.number').outerWidth(true) +
+			$('input.submit').outerWidth() + 8
+		);	
+	}
 });
 
 //---------------------------------------
