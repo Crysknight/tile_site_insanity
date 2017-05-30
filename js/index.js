@@ -379,7 +379,7 @@ $(document).ready(function(){
 
 	/* Обработчик возврата к заказу товара */
 
-	$('.damper button').click(function(){
+	$('.damper button.cancel').click(function(){
 		var name = $(this).parents('.product').find('h3.product-name').text();
 		var confirmation = $('#send_tile .order-wrapper .row');
 		$(this).parents('.damper').fadeOut(200);
