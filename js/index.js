@@ -966,7 +966,7 @@ $(document).ready(function(){
 			name: 'Гавана',
 			palette: 'rgb(81, 62, 56)',
 			image: 'images/gavana.png',
-			price: 110,
+			price: 45,
   		basis: 'Серый цемент'
 		},
   	{
