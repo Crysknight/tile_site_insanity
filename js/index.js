@@ -1,6 +1,6 @@
 /* Конструктор поля выбора цвета */
 
-function ColorOptions(colors, colorInput, priceForOne, counter, sum) {
+function ColorOptions(colors, colorInput, priceForOne, counter, sum, basisOptions) {
 	this.colors = colors;
 	this.colorInput = colorInput;
 	this.priceForOne = priceForOne.find('div:last-child');
@@ -11,6 +11,7 @@ function ColorOptions(colors, colorInput, priceForOne, counter, sum) {
 		this.options.empty();
 		var firstIteration = true;
 		var onlyIteration = true;
+		var regardingColumns = 0;
 		for (i = 0; i < this.colors.length; i++) {
 			if (this.colors[i].price === null) {
 				this.priceForOne.parents('.price-for-one').empty();
@@ -23,11 +24,23 @@ function ColorOptions(colors, colorInput, priceForOne, counter, sum) {
 					.append($('<span></span>')
 						.addClass('rouble'));
 				firstIteration = false;
+				regardingColumns++;
 				continue;
 			}
 			onlyIteration = false;
+			if (i === 1 || this.colors[i].basis !== this.colors[i - 1].basis) {
+				this.options.append($('<div></div>')
+					.addClass('options-column')
+				);
+				this.options.append($('<div></div>')
+					.addClass('basis-delimiter')
+					.text('Основа: ' + this.colors[i].basis)
+				);
+				regardingColumns = 1;
+			}
+			var oddOrEven = regardingColumns % 2 === 0 ? ' even' : ' odd';
 			this.options.append($('<div></div>')
-				.addClass('input-option')
+				.addClass('input-option' + oddOrEven)
 				.text(this.colors[i].name)
 				.css({'color': this.colors[i].palette})
 				.append($('<span></span>')
@@ -49,15 +62,22 @@ function ColorOptions(colors, colorInput, priceForOne, counter, sum) {
 			var newColors = [];
 			for (let i = 0; i < this.colors.length; i++) {
 				if (this.colors[i].name === colorName) {
-					newColors.push(this.colors[i]);
-				}
-			}
-			for (let i = 0; i < this.colors.length; i++) {
-				if (this.colors[i].name === colorName) {
 					continue;
 				}
 				newColors.push(this.colors[i]);
 			}
+			newColors = newColors.sort(function(a, b) {
+		  	if (a.basis > b.basis) return -1;
+		  	if (a.basis < b.basis) return 1;
+		  	if (a.price > b.price) return 1;
+		  	if (a.price < b.price) return -1;
+			});
+			for (let i = 0; i < this.colors.length; i++) {
+				if (this.colors[i].name === colorName) {
+					newColors.unshift(this.colors[i]);
+				}
+			}
+			newColors
 			this.colors = newColors;
 
 			for (let i = 0; i < this.colors.length; i++) {
@@ -538,77 +558,147 @@ $(document).ready(function(){
 			name: 'Арктика',
 			palette: 'rgb(100, 141, 159)',
 			image: 'images/arktika.png',
-			price: 720
+			price: 760,
+			basis: 'Белый цемент'
 		},
   	{
   		name: 'Зеленый мох',
 			palette: 'rgb(58, 78, 79)',
 			image: 'images/mokh.png',
-			price: 530
+			price: 560,
+			basis: 'Серый цемент'
 		},
   	{
 			name: 'Изумруд',
 			palette: 'rgb(132, 180, 157)',
 			image: 'images/izumrud.png',
-			price: 720
+			price: 760,
+			basis: 'Белый цемент'
 		},
   	{
-			name: 'Вишня',
-			palette: 'rgb(150, 100, 100)',
-			image: 'images/vishnya.png',
-			price: 700
-		},
-  	{
-			name: 'Лимон',
+			name: 'Лимонад',
 			palette: 'rgb(215, 168, 73)',
 			image: 'images/limon.png',
-			price: 690
-		},
-  	{
-			name: 'Апельсин',
-			palette: 'rgb(211, 132, 70)',
-			image: 'images/apelsin.png',
-			price: 690
+			price: 730,
+			basis: 'Белый цемент'
 		},
   	{
 			name: 'Гавана',
 			palette: 'rgb(116, 102, 92)',
 			image: 'images/gavana.png',
-			price: 480
-		},
-  	{
-			name: 'Каштан',
-			palette: 'rgb(143, 119, 108)',
-			image: 'images/kashtan.png',
-			price: 480
+			price: 570,
+			basis: 'Серый цемент'
 		},
   	{
 			name: 'Горчица',
 			palette: 'rgb(213, 178, 105)',
 			image: 'images/gorchitsa.png',
-			price: 500
+			price: 480,
+			basis: 'Серый цемент'
 		},
   	{
-			name: 'Сурик',
-			palette: 'rgb(151, 84, 67)',
-			image: 'images/surik.png',
-			price: 450
-		},
-  	{
-			name: 'Жемчужина',
+			name: 'Жемчуг',
 			palette: 'rgb(99, 99, 99)',
 			image: 'images/zhemchuzhina.png',
-			price: 690
+			price: 755,
+			basis: 'Белый цемент'
 		},
   	{
 			name: 'Графит',
   		palette: 'rgb(55, 55, 55)',
   		image: 'images/grafit.png',
-  		price: 430
+  		price: 435,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Портвейн',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 475,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Черри',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 480,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Кокос',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 480,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Венге',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 490,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Миндаль',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 545,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Ротанг',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 595,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Ваниль',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 675,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Малина',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 710,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Куба',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 760,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Угольный',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 775,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Мимоза',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 785,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Осень',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 785,
+  		basis: 'Белый цемент'
   	}
   ];
 
   colors_1 = colors_1.sort(function(a, b) {
+  	if (a.basis > b.basis) return -1;
+  	if (a.basis < b.basis) return 1;
   	if (a.price > b.price) return 1;
   	if (a.price < b.price) return -1;
   });
@@ -618,77 +708,147 @@ $(document).ready(function(){
 			name: 'Арктика',
 			palette: 'rgb(100, 141, 159)',
 			image: 'images/arktika.png',
-			price: 770
+			price: 685,
+			basis: 'Белый цемент'
 		},
   	{
   		name: 'Зеленый мох',
 			palette: 'rgb(58, 78, 79)',
 			image: 'images/mokh.png',
-			price: 580
+			price: 505,
+			basis: 'Серый цемент'
 		},
   	{
 			name: 'Изумруд',
 			palette: 'rgb(132, 180, 157)',
 			image: 'images/izumrud.png',
-			price: 780
+			price: 680,
+			basis: 'Белый цемент'
 		},
   	{
-			name: 'Вишня',
-			palette: 'rgb(150, 100, 100)',
-			image: 'images/vishnya.png',
-			price: 750
-		},
-  	{
-			name: 'Лимон',
+			name: 'Лимонад',
 			palette: 'rgb(215, 168, 73)',
 			image: 'images/limon.png',
-			price: 750
-		},
-  	{
-			name: 'Апельсин',
-			palette: 'rgb(211, 132, 70)',
-			image: 'images/apelsin.png',
-			price: 760
+			price: 665,
+			basis: 'Белый цемент'
 		},
   	{
 			name: 'Гавана',
 			palette: 'rgb(116, 102, 92)',
 			image: 'images/gavana.png',
-			price: 530
-		},
-  	{
-			name: 'Каштан',
-			palette: 'rgb(143, 119, 108)',
-			image: 'images/kashtan.png',
-			price: 530
+			price: 520,
+			basis: 'Серый цемент'
 		},
   	{
 			name: 'Горчица',
 			palette: 'rgb(213, 178, 105)',
 			image: 'images/gorchitsa.png',
-			price: 550
+			price: 440,
+			basis: 'Серый цемент'
 		},
   	{
-			name: 'Сурик',
-			palette: 'rgb(151, 84, 67)',
-			image: 'images/surik.png',
-			price: 500
-		},
-  	{
-			name: 'Жемчужина',
+			name: 'Жемчуг',
 			palette: 'rgb(99, 99, 99)',
 			image: 'images/zhemchuzhina.png',
-			price: 750
+			price: 685,
+			basis: 'Белый цемент'
 		},
   	{
 			name: 'Графит',
   		palette: 'rgb(55, 55, 55)',
   		image: 'images/grafit.png',
-  		price: 440
+  		price: 420,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Портвейн',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 435,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Черри',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 440,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Кокос',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 440,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Венге',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 450,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Миндаль',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 495,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Ротанг',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 545,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Ваниль',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 610,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Малина',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 640,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Куба',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 685,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Угольный',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 700,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Мимоза',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 710,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Осень',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 710,
+  		basis: 'Белый цемент'
   	}
   ];
 
   colors_2 = colors_2.sort(function(a, b) {
+  	if (a.basis > b.basis) return -1;
+  	if (a.basis < b.basis) return 1;
   	if (a.price > b.price) return 1;
   	if (a.price < b.price) return -1;
   });
@@ -698,152 +858,321 @@ $(document).ready(function(){
 			name: 'Арктика',
 			palette: 'rgb(100, 141, 159)',
 			image: 'images/arktika.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
   		name: 'Зеленый мох',
 			palette: 'rgb(58, 78, 79)',
 			image: 'images/mokh.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Изумруд',
 			palette: 'rgb(132, 180, 157)',
 			image: 'images/izumrud.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Вишня',
 			palette: 'rgb(150, 100, 100)',
 			image: 'images/vishnya.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Лимон',
 			palette: 'rgb(215, 168, 73)',
 			image: 'images/limon.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Апельсин',
 			palette: 'rgb(211, 132, 70)',
 			image: 'images/apelsin.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Гавана',
 			palette: 'rgb(116, 102, 92)',
 			image: 'images/gavana.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Каштан',
 			palette: 'rgb(143, 119, 108)',
 			image: 'images/kashtan.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Горчица',
 			palette: 'rgb(213, 178, 105)',
 			image: 'images/gorchitsa.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Сурик',
 			palette: 'rgb(151, 84, 67)',
 			image: 'images/surik.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Жемчужина',
 			palette: 'rgb(99, 99, 99)',
 			image: 'images/zhemchuzhina.png',
-			price: null
+			price: null,
+			basis: 'Стандарт'
 		},
   	{
 			name: 'Графит',
   		palette: 'rgb(55, 55, 55)',
   		image: 'images/grafit.png',
-  		price: null
+  		price: null,
+  		basis: 'Стандарт'
   	}
   ];
 
   var colors_4 = [
   	{
-			name: 'Арктика',
-			palette: 'rgb(100, 141, 159)',
-			image: 'images/arktika.png',
-			price: 200
-		},
-  	{
   		name: 'Зеленый мох',
 			palette: 'rgb(58, 78, 79)',
 			image: 'images/mokh.png',
-			price: 140
-		},
-  	{
-			name: 'Изумруд',
-			palette: 'rgb(132, 180, 157)',
-			image: 'images/izumrud.png',
-			price: 210
-		},
-  	{
-			name: 'Вишня',
-			palette: 'rgb(150, 100, 100)',
-			image: 'images/vishnya.png',
-			price: 190
-		},
-  	{
-			name: 'Лимон',
-			palette: 'rgb(215, 168, 73)',
-			image: 'images/limon.png',
-			price: 190
-		},
-  	{
-			name: 'Апельсин',
-			palette: 'rgb(211, 132, 70)',
-			image: 'images/apelsin.png',
-			price: 190
+			price: 45,
+  		basis: 'Серый цемент'
 		},
   	{
 			name: 'Гавана',
 			palette: 'rgb(116, 102, 92)',
 			image: 'images/gavana.png',
-			price: 110
-		},
-  	{
-			name: 'Каштан',
-			palette: 'rgb(143, 119, 108)',
-			image: 'images/kashtan.png',
-			price: 100
+			price: 110,
+  		basis: 'Серый цемент'
 		},
   	{
 			name: 'Горчица',
 			palette: 'rgb(213, 178, 105)',
 			image: 'images/gorchitsa.png',
-			price: 120
-		},
-  	{
-			name: 'Сурик',
-			palette: 'rgb(151, 84, 67)',
-			image: 'images/surik.png',
-			price: 80
-		},
-  	{
-			name: 'Жемчужина',
-			palette: 'rgb(99, 99, 99)',
-			image: 'images/zhemchuzhina.png',
-			price: 180
+			price: 40,
+  		basis: 'Серый цемент'
 		},
   	{
 			name: 'Графит',
   		palette: 'rgb(55, 55, 55)',
   		image: 'images/grafit.png',
-  		price: 60
+  		price: 40,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Портвейн',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 40,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Черри',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 40,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Кокос',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 40,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Венге',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 40,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Миндаль',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 45,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Винный',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 45,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Ротанг',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 50,
+  		basis: 'Серый цемент'
   	}
   ];
 
   colors_4 = colors_4.sort(function(a, b) {
+  	if (a.basis > b.basis) return -1;
+  	if (a.basis < b.basis) return 1;
+  	if (a.price > b.price) return 1;
+  	if (a.price < b.price) return -1;
+  });
+
+  var colors_5 = [
+  	{
+			name: 'Арктика',
+			palette: 'rgb(100, 141, 159)',
+			image: 'images/arktika.png',
+			price: 645,
+			basis: 'Белый цемент'
+		},
+  	{
+  		name: 'Зеленый мох',
+			palette: 'rgb(58, 78, 79)',
+			image: 'images/mokh.png',
+			price: 480,
+			basis: 'Серый цемент'
+		},
+  	{
+			name: 'Изумруд',
+			palette: 'rgb(132, 180, 157)',
+			image: 'images/izumrud.png',
+			price: 645,
+			basis: 'Белый цемент'
+		},
+  	{
+			name: 'Лимонад',
+			palette: 'rgb(215, 168, 73)',
+			image: 'images/limon.png',
+			price: 625,
+			basis: 'Белый цемент'
+		},
+  	{
+			name: 'Гавана',
+			palette: 'rgb(116, 102, 92)',
+			image: 'images/gavana.png',
+			price: 490,
+			basis: 'Серый цемент'
+		},
+  	{
+			name: 'Горчица',
+			palette: 'rgb(213, 178, 105)',
+			image: 'images/gorchitsa.png',
+			price: 420,
+			basis: 'Серый цемент'
+		},
+  	{
+			name: 'Жемчуг',
+			palette: 'rgb(99, 99, 99)',
+			image: 'images/zhemchuzhina.png',
+			price: 640,
+			basis: 'Белый цемент'
+		},
+  	{
+			name: 'Графит',
+  		palette: 'rgb(55, 55, 55)',
+  		image: 'images/grafit.png',
+  		price: 395,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Портвейн',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 410,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Черри',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 420,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Кокос',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 420,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Венге',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 420,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Миндаль',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 480,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Ротанг',
+  		palette: 'rbg(20, 20, 20)',
+  		image: 'images/grafit.png',
+  		price: 515,
+  		basis: 'Серый цемент'
+  	},
+  	{
+  		name: 'Ваниль',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 575,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Малина',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 610,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Куба',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 645,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Угольный',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 656,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Мимоза',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 665,
+  		basis: 'Белый цемент'
+  	},
+  	{
+  		name: 'Осень',
+  		palette: 'rbg(90, 85, 80)',
+  		image: 'images/grafit.png',
+  		price: 665,
+  		basis: 'Белый цемент'
+  	}
+  ];
+
+  colors_5 = colors_5.sort(function(a, b) {
+  	if (a.basis > b.basis) return -1;
+  	if (a.basis < b.basis) return 1;
   	if (a.price > b.price) return 1;
   	if (a.price < b.price) return -1;
   });
@@ -903,6 +1232,20 @@ $(document).ready(function(){
 		$('#tile4 .counter'), 
 		$('#tile4 .price-for-one'), 
 		$('#tile4 .sum'));
+
+	var tile_5_ColorInput = new ColorOptions(
+		colors_5, 
+		$('#tile5 .color-input'), 
+		$('#tile5 .price-for-one'),
+		$('#tile5 .counter'),
+		$('#tile5 .sum'));
+	var tile_5_SizeInput = new SizeOptions(
+		['500х200х80 мм'], 
+		$('#tile5 .size-input'));
+	var tile_5_Counter = new Counter(
+		$('#tile5 .counter'), 
+		$('#tile5 .price-for-one'), 
+		$('#tile5 .sum'));
 
 	//---------------------------------------
 	/* Задание формата полям формы */

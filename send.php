@@ -3,7 +3,7 @@
 $json = file_get_contents('php://input');
 $json = json_decode($json);
 
-$to = "pavel@pln-b.ru";
+$to = "pavel@pln-b.ru, order@pln-b.ru, trotuarka-market@yandex.ru";
 $subject = "Отправка формы без заказа с сайта trotuar-market.ru";
 $headers = "From: order@trotuar-market.ru \n";
 $headers .= "MIME-Version: 1.0\n";
