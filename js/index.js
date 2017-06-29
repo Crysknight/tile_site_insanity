@@ -1303,9 +1303,9 @@ $(document).ready(function(){
 
 	/* Kitten hey */
 
-	setTimeout(function() {
-		$('#kitten_hey').addClass('hey');
-	}, 10000);
+	// setTimeout(function() {
+	// 	$('#kitten_hey').addClass('hey');
+	// }, 10000);
 
 });
 //---------------------------------------
