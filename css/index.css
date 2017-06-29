@@ -1235,3 +1235,25 @@ span.rouble {
 		line-height: 23px;
 	}
 }
+
+/* Kitten hey */
+
+#kitten_hey {
+	position: fixed;
+	z-index: 500;
+	bottom: -130;
+	right: 50px;
+	width: 200px;
+	height: 126px;
+	background-image: url("../images/hey.png");
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-transition: all 5s;
+	-o-transition: all 5s;
+	transition: all 5s;
+}
+
+#kitten_hey.hey {
+	bottom: 0;
+}

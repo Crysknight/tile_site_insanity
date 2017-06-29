@@ -555,49 +555,49 @@ $(document).ready(function(){
 
   var colors_1 = [
   	{
-			name: 'Арктика',
+			name: 'Арктика (Россия)',
 			palette: 'rgb(1, 47, 121)',
 			image: 'images/arktika.png',
 			price: 760,
 			basis: 'Белый цемент'
 		},
   	{
-  		name: 'Зеленый мох',
+  		name: 'Зеленый мох (Россия)',
 			palette: 'rgb(91, 103, 71)',
 			image: 'images/mokh.png',
 			price: 560,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Изумруд',
+			name: 'Изумруд (Россия)',
 			palette: 'rgb(7, 115, 108)',
 			image: 'images/izumrud.png',
 			price: 760,
 			basis: 'Белый цемент'
 		},
   	{
-			name: 'Лимонад',
+			name: 'Лимонад (Россия)',
 			palette: 'rgb(236, 183, 4)',
 			image: 'images/limonad.png',
 			price: 730,
 			basis: 'Белый цемент'
 		},
   	{
-			name: 'Гавана',
+			name: 'Гавана (Чехия)',
 			palette: 'rgb(81, 62, 56)',
 			image: 'images/gavana.png',
 			price: 570,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Горчица',
+			name: 'Горчица (Россия)',
 			palette: 'rgb(202, 158, 87)',
 			image: 'images/gorchitsa.png',
 			price: 480,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Жемчуг',
+			name: 'Жемчуг (Россия)',
 			palette: 'rgb(99, 99, 99)',
 			image: 'images/zhemchug.png',
 			price: 755,
@@ -611,91 +611,91 @@ $(document).ready(function(){
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Портвейн',
+  		name: 'Портвейн (Россия)',
   		palette: 'rgb(150, 84, 64)',
   		image: 'images/portvein.png',
   		price: 475,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Черри',
+  		name: 'Черри (Россия)',
   		palette: 'rgb(151, 63, 41)',
   		image: 'images/cherry.png',
   		price: 480,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Кокос',
+  		name: 'Кокос (Россия)',
   		palette: 'rgb(113, 89, 72)',
   		image: 'images/kokos.png',
   		price: 480,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Венге',
+  		name: 'Венге (Россия)',
   		palette: 'rgb(92, 67, 47)',
   		image: 'images/venge.png',
   		price: 490,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Миндаль',
-  		palette: 'rgb(20, 20, 20)',
-  		image: 'images/grafit.png',
+  		name: 'Миндаль (Россия)',
+  		palette: 'rgb(171, 149, 121)',
+  		image: 'images/mindal.png',
   		price: 545,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Ротанг',
+  		name: 'Ротанг (Чехия)',
   		palette: 'rgb(218, 161, 81)',
   		image: 'images/rotang.png',
   		price: 595,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Ваниль',
+  		name: 'Ваниль (Россия)',
   		palette: 'rgb(224, 197, 113)',
   		image: 'images/vanil.png',
   		price: 675,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Малина',
+  		name: 'Малина (Чехия)',
   		palette: 'rgb(124, 62, 52)',
   		image: 'images/malina.png',
   		price: 710,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Куба',
+  		name: 'Куба (Чехия)',
   		palette: 'rgb(97, 53, 26)',
   		image: 'images/kuba.png',
   		price: 760,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Угольный',
+  		name: 'Угольный (Чехия)',
   		palette: 'rgb(15, 19, 22)',
   		image: 'images/coal.png',
   		price: 775,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Мимоза',
+  		name: 'Мимоза (Чехия)',
   		palette: 'rgb(205, 152, 10)',
   		image: 'images/mimoza.png',
   		price: 785,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Осень',
+  		name: 'Осень (Чехия)',
   		palette: 'rgb(171, 74, 4)',
   		image: 'images/osen.png',
   		price: 785,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Винный',
+  		name: 'Винный (Чехия)',
   		palette: 'rgb(104, 58, 45)',
   		image: 'images/vinniy.png',
   		price: 520,
@@ -712,49 +712,49 @@ $(document).ready(function(){
 
   var colors_2 = [
   	{
-			name: 'Арктика',
+			name: 'Арктика (Россия)',
 			palette: 'rgb(1, 47, 121)',
 			image: 'images/arktika.png',
 			price: 685,
 			basis: 'Белый цемент'
 		},
   	{
-  		name: 'Зеленый мох',
+  		name: 'Зеленый мох (Россия)',
 			palette: 'rgb(91, 103, 71)',
 			image: 'images/mokh.png',
 			price: 505,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Изумруд',
+			name: 'Изумруд (Россия)',
 			palette: 'rgb(7, 115, 108)',
 			image: 'images/izumrud.png',
 			price: 680,
 			basis: 'Белый цемент'
 		},
   	{
-			name: 'Лимонад',
+			name: 'Лимонад (Россия)',
 			palette: 'rgb(236, 183, 4)',
 			image: 'images/limonad.png',
 			price: 665,
 			basis: 'Белый цемент'
 		},
   	{
-			name: 'Гавана',
+			name: 'Гавана (Чехия)',
 			palette: 'rgb(81, 62, 56)',
 			image: 'images/gavana.png',
 			price: 520,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Горчица',
+			name: 'Горчица (Россия)',
 			palette: 'rgb(202, 158, 87)',
 			image: 'images/gorchitsa.png',
 			price: 440,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Жемчуг',
+			name: 'Жемчуг (Россия)',
 			palette: 'rgb(99, 99, 99)',
 			image: 'images/zhemchug.png',
 			price: 685,
@@ -768,91 +768,91 @@ $(document).ready(function(){
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Портвейн',
+  		name: 'Портвейн (Россия)',
   		palette: 'rgb(150, 84, 64)',
   		image: 'images/portvein.png',
   		price: 435,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Черри',
+  		name: 'Черри (Россия)',
   		palette: 'rgb(151, 63, 41)',
   		image: 'images/cherry.png',
   		price: 440,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Кокос',
+  		name: 'Кокос (Россия)',
   		palette: 'rgb(113, 89, 72)',
   		image: 'images/kokos.png',
   		price: 440,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Венге',
+  		name: 'Венге (Россия)',
   		palette: 'rgb(92, 67, 47)',
   		image: 'images/venge.png',
   		price: 450,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Миндаль',
-  		palette: 'rgb(20, 20, 20)',
-  		image: 'images/grafit.png',
+  		name: 'Миндаль (Россия)',
+  		palette: 'rgb(171, 149, 121)',
+  		image: 'images/mindal.png',
   		price: 495,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Ротанг',
+  		name: 'Ротанг (Чехия)',
   		palette: 'rgb(218, 161, 81)',
   		image: 'images/rotang.png',
   		price: 545,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Ваниль',
+  		name: 'Ваниль (Россия)',
   		palette: 'rgb(224, 197, 113)',
   		image: 'images/vanil.png',
   		price: 610,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Малина',
+  		name: 'Малина (Чехия)',
   		palette: 'rgb(124, 62, 52)',
   		image: 'images/malina.png',
   		price: 640,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Куба',
+  		name: 'Куба (Чехия)',
   		palette: 'rgb(97, 53, 26)',
   		image: 'images/kuba.png',
   		price: 685,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Угольный',
+  		name: 'Угольный (Чехия)',
   		palette: 'rgb(15, 19, 22)',
   		image: 'images/coal.png',
   		price: 700,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Мимоза',
+  		name: 'Мимоза (Чехия)',
   		palette: 'rgb(205, 152, 10)',
   		image: 'images/mimoza.png',
   		price: 710,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Осень',
+  		name: 'Осень (Чехия)',
   		palette: 'rgb(171, 74, 4)',
   		image: 'images/osen.png',
   		price: 710,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Винный',
+  		name: 'Винный (Чехия)',
   		palette: 'rgb(104, 58, 45)',
   		image: 'images/vinniy.png',
   		price: 480,
@@ -869,21 +869,21 @@ $(document).ready(function(){
 
   var colors_3 = [
   	{
-			name: 'Арктика',
+			name: 'Арктика (Россия)',
 			palette: 'rgb(1, 47, 121)',
 			image: 'images/arktika.png',
 			price: null,
 			basis: 'Стандарт'
 		},
   	{
-  		name: 'Зеленый мох',
+  		name: 'Зеленый мох (Россия)',
 			palette: 'rgb(91, 103, 71)',
 			image: 'images/mokh.png',
 			price: null,
 			basis: 'Стандарт'
 		},
   	{
-			name: 'Изумруд',
+			name: 'Изумруд (Россия)',
 			palette: 'rgb(7, 115, 108)',
 			image: 'images/izumrud.png',
 			price: null,
@@ -911,7 +911,7 @@ $(document).ready(function(){
 			basis: 'Стандарт'
 		},
   	{
-			name: 'Гавана',
+			name: 'Гавана (Чехия)',
 			palette: 'rgb(81, 62, 56)',
 			image: 'images/gavana.png',
 			price: null,
@@ -925,7 +925,7 @@ $(document).ready(function(){
 			basis: 'Стандарт'
 		},
   	{
-			name: 'Горчица',
+			name: 'Горчица (Россия)',
 			palette: 'rgb(202, 158, 87)',
 			image: 'images/gorchitsa.png',
 			price: null,
@@ -956,21 +956,21 @@ $(document).ready(function(){
 
   var colors_4 = [
   	{
-  		name: 'Зеленый мох',
+  		name: 'Зеленый мох (Россия)',
 			palette: 'rgb(91, 103, 71)',
 			image: 'images/mokh.png',
 			price: 45,
   		basis: 'Серый цемент'
 		},
   	{
-			name: 'Гавана',
+			name: 'Гавана (Чехия)',
 			palette: 'rgb(81, 62, 56)',
 			image: 'images/gavana.png',
 			price: 45,
   		basis: 'Серый цемент'
 		},
   	{
-			name: 'Горчица',
+			name: 'Горчица (Россия)',
 			palette: 'rgb(202, 158, 87)',
 			image: 'images/gorchitsa.png',
 			price: 40,
@@ -984,49 +984,49 @@ $(document).ready(function(){
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Портвейн',
+  		name: 'Портвейн (Россия)',
   		palette: 'rgb(150, 84, 64)',
   		image: 'images/portvein.png',
   		price: 40,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Черри',
+  		name: 'Черри (Россия)',
   		palette: 'rgb(151, 63, 41)',
   		image: 'images/cherry.png',
   		price: 40,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Кокос',
+  		name: 'Кокос (Россия)',
   		palette: 'rgb(113, 89, 72)',
   		image: 'images/kokos.png',
   		price: 40,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Венге',
+  		name: 'Венге (Россия)',
   		palette: 'rgb(92, 67, 47)',
   		image: 'images/venge.png',
   		price: 40,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Миндаль',
-  		palette: 'rgb(55, 55, 55)',
-  		image: 'images/grafit.png',
+  		name: 'Миндаль (Россия)',
+  		palette: 'rgb(171, 149, 121)',
+  		image: 'images/mindal.png',
   		price: 45,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Винный',
+  		name: 'Винный (Чехия)',
   		palette: 'rgb(104, 58, 45)',
   		image: 'images/vinniy.png',
   		price: 45,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Ротанг',
+  		name: 'Ротанг (Чехия)',
   		palette: 'rgb(218, 161, 81)',
   		image: 'images/rotang.png',
   		price: 50,
@@ -1043,49 +1043,49 @@ $(document).ready(function(){
 
   var colors_5 = [
   	{
-			name: 'Арктика',
+			name: 'Арктика (Россия)',
 			palette: 'rgb(1, 47, 121)',
 			image: 'images/arktika.png',
 			price: 645,
 			basis: 'Белый цемент'
 		},
   	{
-  		name: 'Зеленый мох',
+  		name: 'Зеленый мох (Россия)',
 			palette: 'rgb(91, 103, 71)',
 			image: 'images/mokh.png',
 			price: 480,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Изумруд',
+			name: 'Изумруд (Россия)',
 			palette: 'rgb(7, 115, 108)',
 			image: 'images/izumrud.png',
 			price: 645,
 			basis: 'Белый цемент'
 		},
   	{
-			name: 'Лимонад',
+			name: 'Лимонад (Россия)',
 			palette: 'rgb(236, 183, 4)',
 			image: 'images/limonad.png',
 			price: 625,
 			basis: 'Белый цемент'
 		},
   	{
-			name: 'Гавана',
+			name: 'Гавана (Чехия)',
 			palette: 'rgb(81, 62, 56)',
 			image: 'images/gavana.png',
 			price: 490,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Горчица',
+			name: 'Горчица (Россия)',
 			palette: 'rgb(202, 158, 87)',
 			image: 'images/gorchitsa.png',
 			price: 420,
 			basis: 'Серый цемент'
 		},
   	{
-			name: 'Жемчуг',
+			name: 'Жемчуг (Россия)',
 			palette: 'rgb(99, 99, 99)',
 			image: 'images/zhemchug.png',
 			price: 640,
@@ -1099,91 +1099,91 @@ $(document).ready(function(){
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Портвейн',
+  		name: 'Портвейн (Россия)',
   		palette: 'rgb(150, 84, 64)',
   		image: 'images/portvein.png',
   		price: 410,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Черри',
+  		name: 'Черри (Россия)',
   		palette: 'rgb(151, 63, 41)',
   		image: 'images/cherry.png',
   		price: 420,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Кокос',
+  		name: 'Кокос (Россия)',
   		palette: 'rgb(113, 89, 72)',
   		image: 'images/kokos.png',
   		price: 420,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Венге',
+  		name: 'Венге (Россия)',
   		palette: 'rgb(92, 67, 47)',
   		image: 'images/venge.png',
   		price: 420,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Миндаль',
-  		palette: 'rgb(20, 20, 20)',
-  		image: 'images/grafit.png',
+  		name: 'Миндаль (Россия)',
+  		palette: 'rgb(171, 149, 121)',
+  		image: 'images/mindal.png',
   		price: 480,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Ротанг',
+  		name: 'Ротанг (Чехия)',
   		palette: 'rgb(218, 161, 81)',
   		image: 'images/rotang.png',
   		price: 515,
   		basis: 'Серый цемент'
   	},
   	{
-  		name: 'Ваниль',
+  		name: 'Ваниль (Россия)',
   		palette: 'rgb(224, 197, 113)',
   		image: 'images/vanil.png',
   		price: 575,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Малина',
+  		name: 'Малина (Чехия)',
   		palette: 'rgb(124, 62, 52)',
   		image: 'images/malina.png',
   		price: 610,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Куба',
+  		name: 'Куба (Чехия)',
   		palette: 'rgb(97, 53, 26)',
   		image: 'images/kuba.png',
   		price: 645,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Угольный',
+  		name: 'Угольный (Чехия)',
   		palette: 'rgb(15, 19, 22)',
   		image: 'images/coal.png',
   		price: 656,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Мимоза',
+  		name: 'Мимоза (Чехия)',
   		palette: 'rgb(205, 152, 10)',
   		image: 'images/mimoza.png',
   		price: 665,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Осень',
+  		name: 'Осень (Чехия)',
   		palette: 'rgb(171, 74, 4)',
   		image: 'images/osen.png',
   		price: 665,
   		basis: 'Белый цемент'
   	},
   	{
-  		name: 'Винный',
+  		name: 'Винный (Чехия)',
   		palette: 'rgb(104, 58, 45)',
   		image: 'images/vinniy.png',
   		price: 450,
@@ -1301,8 +1301,13 @@ $(document).ready(function(){
 		cssEase: 'linear'
 	});
 
-});
+	/* Kitten hey */
 
+	setTimeout(function() {
+		$('#kitten_hey').addClass('hey');
+	}, 10000);
+
+});
 //---------------------------------------
 /* JS-Верстка */
 //---------------------------------------
